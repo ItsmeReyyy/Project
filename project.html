@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+    <title>Game Development Library System</title>
+    <link rel="stylesheet" href="Project.css">
+</head>
+<body>
+    <div id="login-section">
+        <h1>Login to Game Development Library</h1>
+        <form id="login-form">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required aria-label="Username">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required aria-label="Password">
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-error"></p>
+        <p><a href="#" id="toggle-signup">Don't have an account? Sign Up</a></p>
+    </div>
+
+    <div id="signup-section" style="display: none;">
+        <h1>Create Account</h1>
+        <form id="signup-form">
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" required aria-label="New Username">
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" required aria-label="New Password">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" required aria-label="Confirm Password">
+            <label for="role">Role:</label>
+            <select id="role" aria-label="User Role">
+                <option value="Student">Student</option>
+                <option value="Instructor">Instructor</option>
+                <option value="Admin">Admin</option>
+            </select>
+            <label for="email">Email (Optional):</label>
+            <input type="email" id="email" aria-label="Email">
+            <button type="submit">Sign Up</button>
+        </form>
+        <p id="signup-error"></p>
+        <p><a href="#" id="toggle-login">Already have an account? Login</a></p>
+    </div>
+
+    <div id="dashboard-section" style="display: none;">
+        <header>
+            <h1>Game Development Library Dashboard</h1>
+            <p id="welcome-message"></p>
+            <button id="logout-btn">Logout</button>
+        </header>
+
+        <nav>
+            <button id="search-btn">Search Resources</button>
+            <button id="upload-btn">Upload Resource</button>
+            <button id="reports-btn">Generate Reports</button>
+            <button id="notifications-btn">Check Notifications</button>
+            <button id="usability-survey-btn">Usability Survey</button>
+        </nav>
+
+        <section id="search-section">
+            <h2>Search Resources</h2>
+            <input type="text" id="search-input" placeholder="Search by title or category" aria-label="Search resources">
+            <button id="search-submit">Search</button>
+            <ul id="resource-list"></ul>
+        </section>
+
+        <section id="upload-section" style="display: none;">
+            <h2>Upload Resource</h2>
+            <input type="text" id="resource-title" placeholder="Title" required>
+            <select id="resource-category">
+                <option>E-book</option>
+                <option>Tutorial</option>
+                <option>Project Sample</option>
+                <option>Documentation</option>
+                <option>Multimedia</option>
+            </select>
+            <input type="file" id="resource-file" accept=".pdf,.doc,.mp4">
+            <button id="upload-submit">Upload</button>
+        </section>
+
+        <section id="reports-section" style="display: none;">
+            <h2>System Reports</h2>
+            <button id="generate-report">Generate Activity Report</button>
+            <pre id="report-output"></pre>
+        </section>
+
+        <section id="notifications-section" style="display: none;">
+            <h2>Notifications</h2>
+            <p id="notification-message">No new notifications.</p>
+        </section>
+
+        <section id="survey-section" style="display: none;">
+            <h2>Usability Survey (ISO 25010)</h2>
+            <form id="survey-form">
+                <label>Is the interface easy to use? (1-5)</label>
+                <input type="number" min="1" max="5" id="usability-score" required>
+                <button type="submit">Submit Survey</button>
+            </form>
+            <p id="survey-result"></p>
+        </section>
+    </div>
+
+    <script src="Project.js"></script>
+</body>
+</html>
